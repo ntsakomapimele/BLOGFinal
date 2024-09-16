@@ -1,0 +1,70 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Article</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/W3.css' %}">
+<link rel="stylesheet" href="{% static 'css/raleway.css' %}">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<div class="w3-card-4 w3-margin w3-white">
+
+    <div class="w3-container">
+      <h1><b>{{ post.title }}</b></h1>
+      <h5>{{ post.topic.topic_name }} <span class="w3-opacity">{{ post.date_posted }}</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>{{ post.content }}</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          {% for comment in post.comment_set.all %}
+            <li>
+                <strong>{{ comment.user.username }}:</strong> {{ comment.content }}<br>
+                <small>Posted on {{ comment.created_at }}</small>
+            </li>
+        {% endfor %}</span></p>
+        <a href="{% url 'add_comment' post.id %}">Add a comment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
+  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+    
+    {% if previous_post %}
+        <a href="{% url 'post_detail' post_id=previous_post.id %}">
+            <button class="w3-button w3-black w3-padding-large w3-margin-bottom">« Previous</button>
+        </a>
+    {% else %}
+        <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">« Previous</button>
+    {% endif %}
+
+    
+    {% if next_post %}
+        <a href="{% url 'post_detail' post_id=next_post.id %}">
+            <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+        </a>
+    {% else %}
+        <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Next »</button>
+    {% endif %}
+</footer>
+  
+  </body>
+  </html>
+
+
+
+

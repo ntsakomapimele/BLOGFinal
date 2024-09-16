@@ -1,0 +1,7 @@
+<h1>Comments</h1>
+<ul>
+  {% for comment in comments %}
+    <li>{{ comment.user }}: {{ comment.content }} ({{ comment.created_at }})</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'add_comment' %}">Add Comment</a>

@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Blog</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+      .img-custom {
+        width: 100%;
+        max-width: 250px; /* Adjust the max width as needed */
+        margin: 0 auto; /* Center the images */
+      }
+      .col {
+        padding: 0; /* Remove padding from columns */
+        margin-bottom: 20px; /* Adjust the spacing between rows */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <h1 class="display-5">The Tech Industry 2024</h1>
+        <p class="lead">Leading Technology trends in 2024.</p>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-md-4 col-sm-6 col-12">
+          <img onclick="location.href='AI.html'" src="{% static 'images/what-is-ai-artificial-intelligence.webp' %}" class="img-thumbnail img-custom">
+        </div>
+        <div class="col-md-4 col-sm-6 col-12">
+          <img onclick="location.href='cyberSecurity.html'" src="{% static 'images/cyberSecurity.png' %}" class="img-thumbnail img-custom">
+        </div>
+        <div class="col-md-4 col-sm-6 col-12">
+          <img onclick="location.href='VR.html'" src="{% static 'images/Virtual_Reality_1.avif' %}" class="img-thumbnail img-custom">
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-md-4 col-sm-6 col-12">
+          <img onclick="location.href='QuantumComp.html'" src="{% static 'images/Quantum computing.png' %}" class="img-thumbnail img-custom">
+        </div>
+        <div class="col-md-4 col-sm-6 col-12">
+          <img onclick="location.href='AR.html'" src="{% static 'images/AR.webp' %}" class="img-thumbnail img-custom">
+        </div>
+        <div class="col-md-4 col-sm-6 col-12">
+          <img onclick="location.href='robotics.html'" src="{% static 'images/robotics.jpg' %}" class="img-thumbnail img-custom">
+        </div>
+      </div>
+
+      <footer class="bg-dark text-white mt-5 p-4 text-center">
+        <p>Lorem Ipsum.</p>
+        <p>
+          <a href="#" class="text-white">dolor sit amet</a> | 
+          <a href="#" class="text-white">consectetur adipiscing elit</a> | 
+          <a href="#" class="text-white">Sed dignissim leo neque</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
